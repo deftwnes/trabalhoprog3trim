@@ -1,0 +1,19 @@
+package com.example.demo.model;
+
+import javax.persistence.*;
+import java.util.List;
+
+@Entity
+public class Pedido {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String data;
+    private double total;
+
+    @ManyToMany
+    private List<Produto> produtos;
+
+    // Getters e Setters
+}
