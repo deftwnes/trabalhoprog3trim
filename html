@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Produtos</title>
+    <title>Lista de Produtos</title>
 </head>
 <body>
-    <h1>Lista de Produtos</h1>
+    <h1>Produtos</h1>
     <a href="/produtos/novo">Novo Produto</a>
     <table>
         <thead>
@@ -21,4 +21,13 @@
                 <td th:text="${produto.nome}"></td>
                 <td th:text="${produto.descricao}"></td>
                 <td th:text="${produto.preco}"></td>
-                <td th:text="${produto
+                <td th:text="${produto.estoque}"></td>
+                <td>
+                    <a th:href="@{/produtos/editar/{id}(id=${produto.id})}">Editar</a>
+                    <a th:href="@{/produtos/excluir/{id}(id=${produto.id})}">Excluir</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
